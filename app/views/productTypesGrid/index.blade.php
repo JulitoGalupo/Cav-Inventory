@@ -1,8 +1,22 @@
-{{ Form::open(['route' => ['productTypesGrid.destroy', 'delete'], 'method' => 'DELETE']) }}
-<a class="pure-button pure-button-primary" href="{{ route('productTypesGrid.create') }}">Add Type</a>
-{{ Form::submit('Delete', ['class' => 'pure-button']) }}
+@extends('layouts.grid')
 
-<table border="1" style="border-collapse: collapse">
+@section('title')
+    Product types
+@stop
+
+@section('toolbar')
+    {{ Form::open(['route' => ['productTypesGrid.destroy', 'delete'], 'method' => 'DELETE']) }}
+        <a class="pure-button pure-button-primary" href="{{ route('productTypesGrid.create') }}">Add Type</a>
+        {{ Form::submit('Delete', ['class' => 'pure-button']) }}
+@stop
+
+@section('table-headers')
+    <th></th>
+    <th>Product type</th>
+    <th>Action</th>
+@stop
+
+@section('table-contents')
     @foreach(ProductType::all() as $productType)
         <tr>
             <td>
@@ -16,4 +30,4 @@
             </td>
         </tr>
     @endforeach
-</table>
+@stop
