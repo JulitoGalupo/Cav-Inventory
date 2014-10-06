@@ -3,7 +3,7 @@
 class UsersGridController extends \BaseController {
 
 	/**
-	 * Display a listing of the users.
+w	 * Display a listing of the users.
 	 *
 	 * @return Response
 	 */
